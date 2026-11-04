@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Broke No More — simple money lessons and smarter financial habits for students and young adults.">
+<title>Broke No More | Smarter Money Starts Here</title>
+<style>
+:root{--ink:#101010;--ink2:#181818;--gold:#d7b45d;--gold2:#f0d78f;--paper:#faf9f6;--muted:#bdb8aa;--white:#fff}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:Inter,Arial,Helvetica,sans-serif;line-height:1.6}
+a{color:inherit;text-decoration:none}
+.wrap{width:min(1120px,calc(100% - 40px));margin:auto}
+header{background:var(--ink);color:white;border-bottom:1px solid #302817}
+.nav{min-height:76px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.brand{font-weight:900;letter-spacing:.13em;color:var(--gold);font-size:1.15rem}
+.navlinks{display:flex;gap:26px;font-size:.92rem;color:#e9e5dc}
+.navlinks a:hover{color:var(--gold)}
+.hero{background:radial-gradient(ellipse at 78% 40%,#2c2618 0%,#151515 44%,#101010 75%);color:white;padding:86px 0 92px;overflow:hidden}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;align-items:center;gap:56px}
+.eyebrow{color:var(--gold);text-transform:uppercase;letter-spacing:.2em;font-size:.76rem;font-weight:800}
+h1{font-size:clamp(2.7rem,6vw,5.1rem);line-height:1.02;letter-spacing:-.055em;margin:18px 0}
+h1 span{color:var(--gold)}
+.lead{font-size:1.12rem;color:#d8d4ca;max-width:540px}
+.actions{display:flex;gap:13px;flex-wrap:wrap;margin-top:30px}
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:13px 21px;border-radius:3px;font-weight:800;letter-spacing:.02em;transition:.2s}
+.btn-gold{background:var(--gold);color:#17130a}
+.btn-gold:hover{background:var(--gold2);transform:translateY(-2px)}
+.btn-outline{border:1px solid #80734f;color:#fff}
+.btn-outline:hover{border-color:var(--gold);color:var(--gold)}
+.book-stage{min-height:350px;display:grid;place-items:center;position:relative}
+.book{width:min(270px,75vw);aspect-ratio: .72;background:linear-gradient(145deg,#252525,#090909);border:1px solid #80652d;box-shadow:20px 24px 55px #0009;transform:rotate(-5deg);padding:28px 23px;position:relative;display:flex;flex-direction:column;justify-content:space-between}
+.book:before{content:"";position:absolute;left:10px;top:0;bottom:0;width:2px;background:#8d713a}
+.book-kicker{font-size:.55rem;letter-spacing:.22em;color:#e6d39e;text-align:center}
+.book-title{font-size:2.2rem;line-height:.98;font-weight:950;letter-spacing:-.04em;color:var(--gold);text-align:center}
+.book-sub{text-align:center;color:#f5f1e7;font-size:.68rem;line-height:1.4}
+.book-author{text-align:center;color:#e9d9ad;letter-spacing:.18em;font-size:.63rem}
+.book-mark{height:2px;background:linear-gradient(90deg,transparent,var(--gold),transparent);margin:13px 0}
+section{padding:76px 0}
+.section-head{text-align:center;max-width:660px;margin:0 auto 42px}
+.section-head h2{font-size:clamp(2rem,4vw,3rem);letter-spacing:-.04em;line-height:1.1;margin:10px 0}
+.section-head p{color:#666257}
+.features{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.feature{background:white;border:1px solid #e9e5db;padding:26px;border-radius:5px}
+.feature .num{color:#a17b2c;font-weight:900;letter-spacing:.12em;font-size:.78rem}
+.feature h3{margin:12px 0 6px}
+.feature p{color:#6c685f;margin:0;font-size:.95rem}
+.product{background:var(--ink);color:white}
+.product-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;align-items:center}
+.product-cover{background:linear-gradient(145deg,#242424,#090909);border:1px solid #705b30;min-height:360px;display:grid;place-items:center;padding:28px}
+.product-cover .book{transform:none;width:210px}
+.product-copy h2{font-size:clamp(2rem,4vw,3.1rem);line-height:1.08;margin:12px 0}
+.product-copy p{color:#d0cbc0}
+.price{font-size:2rem;color:var(--gold);font-weight:900;margin:20px 0 4px}
+.small{font-size:.82rem;color:#aaa395}
+.list{padding-left:20px;color:#e7e2d7}
+.list li{margin:8px 0}
+.purchase-note{margin-top:16px;border-left:3px solid var(--gold);padding:10px 14px;background:#ffffff0b;color:#d6d0c4;font-size:.88rem}
+.about{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center}
+.about-panel{background:#eeeae0;padding:34px;border-left:4px solid var(--gold)}
+.about h2{font-size:2.4rem;line-height:1.1;margin:10px 0}
+footer{background:#0b0b0b;color:#d4d0c6;padding:34px 0}
+.footer-row{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;align-items:center}
+footer .brand{display:block;margin-bottom:5px}
+footer small{color:#aaa395}
+@media(max-width:760px){.nav{padding:17px 0;align-items:flex-start;flex-direction:column}.navlinks{gap:16px;flex-wrap:wrap}.hero{padding:62px 0}.hero-grid,.product-grid,.about{grid-template-columns:1fr;gap:34px}.book-stage{min-height:310px}.features{grid-template-columns:1fr}.product-cover{min-height:310px}section{padding:58px 0}}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#home">BROKE NO MORE</a>
+    <nav class="navlinks" aria-label="Main navigation">
+      <a href="#learn">What you'll learn</a><a href="#ebook">The ebook</a><a href="#about">About</a>
+    </nav>
+  </div>
+</header>
+<main>
+<section class="hero" id="home">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="eyebrow">A smarter relationship with money</div>
+      <h1>Take control.<br><span>Build better</span><br>money habits.</h1>
+      <p class="lead">Simple, practical money lessons for students and young adults who want to make more thoughtful financial choices.</p>
+      <div class="actions">
+        <a class="btn btn-gold" href="#ebook">Explore the ebook</a>
+        <a class="btn btn-outline" href="#learn">What you'll learn</a>
+      </div>
+    </div>
+    <div class="book-stage" aria-label="Broke No More ebook cover illustration">
+      <div class="book">
+        <div class="book-kicker">A BEGINNER'S GUIDE</div>
+        <div><div class="book-title">BROKE<br>NO MORE</div><div class="book-mark"></div><div class="book-sub">A SIMPLE GUIDE TO<br>SMARTER MONEY CHOICES</div></div>
+        <div class="book-author">MR. PEBBLE</div>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="learn">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Small steps. Strong foundations.</div>
+      <h2>Money basics, made simpler.</h2>
+      <p>Build useful everyday skills with clear, beginner-friendly ideas you can put into practice.</p>
+    </div>
+    <div class="features">
+      <article class="feature"><div class="num">01 / BUDGET</div><h3>Understand your money</h3><p>Learn what budgeting means and how to make a simple plan for the money you have.</p></article>
+      <article class="feature"><div class="num">02 / SAVE</div><h3>Build saving habits</h3><p>Explore realistic ways to set savings goals and make saving part of your routine.</p></article>
+      <article class="feature"><div class="num">03 / CHOOSE</div><h3>Spend thoughtfully</h3><p>Think through everyday spending choices and make decisions that support your goals.</p></article>
+    </div>
+  </div>
+</section>
+<section class="product" id="ebook">
+  <div class="wrap product-grid">
+    <div class="product-cover">
+      <div class="book">
+        <div class="book-kicker">A BEGINNER'S GUIDE</div>
+        <div><div class="book-title">BROKE<br>NO MORE</div><div class="book-mark"></div><div class="book-sub">A SIMPLE GUIDE TO<br>SMARTER MONEY CHOICES</div></div>
+        <div class="book-author">MR. PEBBLE</div>
+      </div>
+    </div>
+    <div class="product-copy">
+      <div class="eyebrow">The featured ebook</div>
+      <h2>The Smart Money Guide</h2>
+      <p>A straightforward introduction to everyday money management, created for people who are just getting started.</p>
+      <ul class="list"><li>Beginner-friendly financial education</li><li>Budgeting and saving fundamentals</li><li>Thoughtful spending and goal-setting ideas</li><li>Convenient PDF format</li></ul>
+      <div class="price">$3.99 <span class="small">USD · one-time purchase</span></div>
+      <div class="actions"><a class="btn btn-gold" href="#contact" aria-label="Ask about the ebook">Purchase link coming soon</a></div>
+      <div class="purchase-note">Secure checkout and automatic PDF delivery will be enabled once the payment provider is connected and tested.</div>
+    </div>
+  </div>
+</section>
+<section id="about">
+  <div class="wrap about">
+    <div>
+      <div class="eyebrow">The idea behind the brand</div>
+      <h2>Start where you are. Learn as you go.</h2>
+      <p>Broke No More is a beginner-focused educational brand built around making money topics easier to understand. The goal is to encourage practical habits, informed choices and steady learning.</p>
+    </div>
+    <div class="about-panel">
+      <div class="eyebrow">Created by</div>
+      <h3>Mr. Pebble</h3>
+      <p>Helping make everyday financial education clearer, more approachable and easier to put into practice.</p>
+      <p class="small">Educational content only; not individualized financial, investment, tax or legal advice.</p>
+    </div>
+  </div>
+</section>
+<section id="contact" style="padding-top:0">
+  <div class="wrap section-head">
+    <div class="eyebrow">Stay connected</div>
+    <h2>Have a question?</h2>
+    <p>Contact details and the live purchase link can be added here when your store and payment arrangements are ready.</p>
+  </div>
+</section>
+</main>
+<footer>
+  <div class="wrap footer-row">
+    <div><span class="brand">BROKE NO MORE</span><small>Smarter money starts here.</small></div>
+    <small>© 2026 Broke No More · Created by Mr. Pebble</small>
+  </div>
+</footer>
+</body>
+</html>
